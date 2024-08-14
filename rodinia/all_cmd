@@ -1,0 +1,16 @@
+-c bin/backprop --options="65536"
+-c bin/bfs --options="multigpu_benchmarks/rodinia/data/bfs/graph65536.txt"
+-c bin/b+tree.out --options="file ../data/b+tree/mil.txt command ../data/b+tree/command.txt"
+-c bin/gaussian --options="-f ../data/gaussian/matrix4.txt"
+-c bin/gaussian --options="-s 16"
+./3D 512 8 100 ../../data/hotspot3D/power_512x8 ../../data/hotspot3D/temp_512x8 output.out
+-c bin/hotspot --options="512 2 2 ../data/hotspot/temp_512 ../data/hotspot/power_512 output.out"
+./pavle ../../data/huffman/test1024_H2.206587175259.in 
+-c lavaMD --options="-boxes1d 10"
+hip/lud_hip -s 256 -v
+-c nn --options="filelist_4 -r 5 -lat 30 -lng 90" 
+./needle 2048 10
+./pathfinder 100000 100 20 > result.txt
+-c sc_gpu --options="10 20 256 65536 65536 1000 none output.txt 1"
+-c srad --options="100 0.5 502 458"
+./srad 2048 2048 0 127 0 127 0.5 2

@@ -1,0 +1,4 @@
+/nobackup/rajesh/gem5_multigpu/multigpu_benchmarks/rodinia/nn/cane4_0.db
+/nobackup/rajesh/gem5_multigpu/multigpu_benchmarks/rodinia/nn/cane4_1.db
+/nobackup/rajesh/gem5_multigpu/multigpu_benchmarks/rodinia/nn/cane4_2.db
+/nobackup/rajesh/gem5_multigpu/multigpu_benchmarks/rodinia/nn/cane4_3.db

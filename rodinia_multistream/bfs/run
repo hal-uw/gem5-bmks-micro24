@@ -1,0 +1,1 @@
+docker run -u $UID:$GID --volume $(pwd):$(pwd) -w $(pwd) pdalmia/cpcoh gem5/build/GCN3_X86/gem5.opt gem5/configs/example/apu_se.py --reg-alloc-policy=dynamic -n 3 --benchmark-root=multigpu_benchmarks/rodinia/bfs/bin -c bfs --options="multigpu_benchmarks/rodinia/data/bfs/graph65536.txt"
