@@ -1,4 +1,3 @@
-GEM5_PATH= ../../../
 CFLAGS += -I$(GEM5_PATH)/include
 LDFLAGS += -L$(GEM5_PATH)/util/m5/build/x86/out -lm5
 GEM5_PATH ?= ../../../../

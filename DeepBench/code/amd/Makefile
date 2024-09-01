@@ -25,7 +25,7 @@ all: conv rnn gemm
 #OPT=-g -O0 -fsanitize=undefined -fno-omit-frame-pointer
 OPT=-g
 
-GEM5_PATH= ../../../../
+GEM5_PATH ?= ../../../../
 CFLAGS += -I$(GEM5_PATH)/include
 LDFLAGS += -L$(GEM5_PATH)/util/m5/build/x86/out -lm5
 

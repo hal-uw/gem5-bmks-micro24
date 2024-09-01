@@ -22,7 +22,7 @@ CPPFLAGS := -I.
 # HIPCC = $(HIP_PATH)/bin/hipcc
 
 # these are needed for m5ops
-GEM5_PATH= ../../
+GEM5_PATH?= ../../
 CFLAGS := -I$(GEM5_PATH)/include
 LDFLAGS := -L$(GEM5_PATH)/util/m5/build/x86/out -lm5
 

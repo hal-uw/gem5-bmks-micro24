@@ -1,7 +1,6 @@
-GEM5_PATH= ../../../
+GEM5_PATH ?= ../../
 CFLAGS += -I$(GEM5_PATH)/include
 LDFLAGS += -L$(GEM5_PATH)/util/m5/build/x86/out -lm5
-HIP_PATH?= $(wildcard /p/hal/private/rocm/)
 ifeq (,$(HIP_PATH))
 	HIP_PATH=/opt/rocm
 endif
@@ -15,11 +14,6 @@ else
 endif
 
 all: square.out
-
-GEM5_PATH= ../../
-CFLAGS += -I$(GEM5_PATH)/include
-LDFLAGS += -L$(GEM5_PATH)/util/m5/build/x86/out -lm5
-
 
 # Step
 square.cpp: square.cu
