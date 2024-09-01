@@ -53,7 +53,7 @@ RUN ln -s /usr/share/pyshared/lsb_release.py /usr/local/lib/python3.9/site-packa
 # Setuptools is needed for cmake for ROCm build. Install using pip.
 RUN pip install -U setuptools scons==3.1.2 six
 RUN wget -qO- http://repo.radeon.com/rocm/archive/apt_1.6.4.tar.bz2 | tar -xjv
-RUN git clone https://v-ramadas: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@github.com/hal-uw/ROCT-Thunk-Interface.git && \
+RUN git clone https://v-ramadas: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@github.com/hal-uw/ROCT-Thunk-Interface.git && \
     mkdir -p /ROCT-Thunk-Interface-build
 RUN apt-get install -y libnuma-dev libpci-dev
 WORKDIR /ROCT-Thunk-Interface/build
@@ -61,14 +61,14 @@ RUN cmake -DCMAKE_BUILD_TYPE=Debug .. && \
     make -j$(nproc) && cpack -G DEB && dpkg -i *.deb
 WORKDIR /
 RUN dpkg -i apt_1.6.4/pool/main/h/hsa-ext-rocr-dev/*
-RUN git clone https://v-ramadas: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@github.com/hal-uw/ROCR-Runtime.git && \
+RUN git clone https://v-ramadas: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@github.com/hal-uw/ROCR-Runtime.git && \
     mkdir -p /ROCR-Runtime/src/build
 WORKDIR /ROCR-Runtime/src/build
 RUN cmake -DCMAKE_BUILD_TYPE=Debug -DCPACK_PACKAGE_VERSION=1.1.5- .. && \
     make -j$(nproc) && cpack -G DEB && dpkg -i *.deb
 WORKDIR /
 RUN dpkg -i apt_1.6.4/pool/main/r/rocm-utils/*
-RUN git clone --recursive https://v-ramadas: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@github.com/hal-uw/HCC.git && \
+RUN git clone --recursive https://v-ramadas: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@github.com/hal-uw/HCC.git && \
     mkdir -p /HCC/build
 # For whatever reason they don't make this directory
 RUN mkdir -p /opt/rocm/include
@@ -77,7 +77,7 @@ RUN cmake -DNUM_BUILD_THREADS=$(nproc) -DHSA_AMDGPU_GPU_TARGET="gfx801" .. && ma
 WORKDIR /
 RUN dpkg -i apt_1.6.4/pool/main/r/rocm-opencl/*
 RUN dpkg -i apt_1.6.4/pool/main/r/rocm-opencl-dev/*
-RUN git clone -b update https://v-ramadas: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@github.com/hal-uw/HIP.git && \
+RUN git clone -b update https://v-ramadas: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@github.com/hal-uw/HIP.git && \
     mkdir -p /HIP/build
 ENV ROCM_PATH /opt/rocm
 ENV HCC_HOME ${ROCM_PATH}/hcc
@@ -96,7 +96,7 @@ RUN git clone --single-branch https://github.com/ROCmSoftwarePlatform/hipBLAS/ &
     git clone --single-branch https://github.com/ROCmSoftwarePlatform/rocBLAS/ && \
     git clone --single-branch https://github.com/ROCmSoftwarePlatform/MIOpenGEMM/ && \
     git clone --single-branch https://github.com/RadeonOpenCompute/rocm-cmake/
-RUN git clone -b scheduling https://v-ramadas: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@github.com/hal-uw/MIOpen
+RUN git clone -b scheduling https://v-ramadas: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@github.com/hal-uw/MIOpen
 ARG gem5_dist=http://dist.gem5.org/dist/v21-0
 # Apply patches to various repos
 RUN mkdir -p /patch && cd /patch && \
