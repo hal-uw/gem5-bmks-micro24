@@ -1,3 +1,0 @@
-docker run -u $UID:$GID --volume $(pwd):$(pwd) -w $(pwd) gcr.io/gem5-test/gcn-gpu:latest gem5/build/GCN3_X86/gem5.opt gem5/configs/example/apu_se.py --reg-alloc-policy=dynamic -n 3 -c bin/gaussian --options="-f /nobackup/sinclair/gem5-resources/src/gpu/rodinia/data/gaussian/matrix4.txt"
-
-docker run -u $UID:$GID --volume $(pwd):$(pwd) -w $(pwd) gcr.io/gem5-test/gcn-gpu:latest gem5/build/GCN3_X86/gem5.opt gem5/configs/example/apu_se.py --reg-alloc-policy=dynamic -n 3 -c bin/gaussian --options="-s 16"

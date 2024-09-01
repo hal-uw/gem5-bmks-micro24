@@ -1,2 +1,0 @@
-# hip/lud_hip -i ../../data/lud/256.dat 
-hip/lud_hip -s 256 -v
