@@ -68,7 +68,7 @@ RUN cmake -DCMAKE_BUILD_TYPE=Debug -DCPACK_PACKAGE_VERSION=1.1.5- .. && \
     make -j$(nproc) && cpack -G DEB && dpkg -i *.deb
 WORKDIR /
 RUN dpkg -i apt_1.6.4/pool/main/r/rocm-utils/*
-RUN git clone --recursive https://@github.com/hal-uw/HCC.git && \
+RUN git clone --recursive https://github.com/hal-uw/HCC.git && \
     mkdir -p /HCC/build
 # For whatever reason they don't make this directory
 RUN mkdir -p /opt/rocm/include
